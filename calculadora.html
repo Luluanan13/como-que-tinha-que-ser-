@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Soma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Soma</h1>
+    <input type="number" id="numero1" placeholder="Digite o 1º número">
+    <input type="number" id="numero2" placeholder="Digite o 2º número">
+    <button onclick="somar()">Somar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function somar() {
+            const numero1 = parseFloat(document.getElementById("numero1").value);
+            const numero2 = parseFloat(document.getElementById("numero2").value);
+
+            if (isNaN(numero1) || isNaN(numero2)) {
+                document.getElementById("resultado").textContent = "Por favor, insira números válidos.";
+            } else {
+                const soma = numero1 + numero2;
+                document.getElementById("resultado").textContent = `Resultado: ${soma}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverter Mensagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inverter Mensagem</h1>
+    <input type="text" id="inputMensagem" placeholder="Digite sua mensagem">
+    <button onclick="inverterMensagem()">Inverter</button>
+    <p id="resultado"></p>
+
+    <script>
+        function inverterMensagem() {
+            const mensagem = document.getElementById("inputMensagem").value;
+            const mensagemInvertida = mensagem.split("").reverse().join("");
+            document.getElementById("resultado").textContent = `Mensagem invertida: ${mensagemInvertida}`;
+        }
+    </script>
+</body>
+</html>
